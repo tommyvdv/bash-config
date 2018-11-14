@@ -1,17 +1,24 @@
 .
 ├── .bash
 │   ├── .gitkeep
-│   ├── aliases_bash
-│   ├── aliases_git
-│   ├── autocomplete_make
-│   ├── autocomplete_ssh
-│   └── functions_ssh
+│   ├── make
+│   │   └── make_file_autocomplete_load
+│   └── ssh
+│       ├── ssh_config_autocomplete_load
+│       └── ssh_configure_host
 ├── .bash_profile
 ├── .bashrc
 ├── .editorconfig
 ├── .gitignore
 ├── Makefile
+├── docker
+│   └── bash
+│       └── Dockerfile
+├── docker-compose.yml
+├── git-hooks
+│   ├── install
+│   └── pre-commit
 ├── readme.md
 └── tree.md
 
-1 directory, 13 files
+6 directories, 15 files

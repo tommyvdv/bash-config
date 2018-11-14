@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# adds make directives to the make autocomplete
+# Call whenever Makefile changes
+# @TODO: experiment with file listener to update autocomplete automatically
+#
+make_file_autocomplete_load() {
+  echo "* loading GNUMAKE Makefile autocomplete"
+  complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
+}
+make_file_autocomplete_load

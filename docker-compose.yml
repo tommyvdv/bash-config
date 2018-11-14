@@ -1,0 +1,9 @@
+version: '3'
+services:
+  bash:
+    tty: true
+    build:
+      context: ./
+      dockerfile: docker/bash/Dockerfile
+    volumes:
+      - ".:/root/.dotfiles"

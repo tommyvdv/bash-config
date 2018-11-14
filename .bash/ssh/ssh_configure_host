@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# Create an SSH config host entry and add my public key to that host.
+#
+# @param The identifier to use for this SSH host configuration.
+# @param The host name.
+# @param The username for that host.
+#
+ssh_configure_host() {
+  local identifier=$1
+  local hostname=$2
+  local username=$3
+
+  if [[ "$identifier" == "" ]] || [[ "$username" == "" ]] || [[ "$hostname" == "" ]]
+  then
+    echo "usage: ssh_configure_host <identifier> <hostname> <username>"
+  else
+    echo -e "Host $identifier\n\tHostName $hostname\n\tUser $username\n\tIdentityFile ~/.ssh/id_rsa\n\tForwardAgent yes" >> ~/.ssh/config
+    ssh $identifier 'mkdir -p .ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+    # # TODO Use ssh_test_key()?
+    tput bold; ssh -o PasswordAuthentication=no $identifier true && { tput setaf 2; echo 'Success!'; } || { tput setaf 1; echo 'Failure'; }; tput sgr0
+    ssh_config_autocomplete_load
+  fi
+}
+ssh_configure_host $@

@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# adds ~/.ssh/config to the ssh autocomplete
+# Call whenever ssh host config changes (@see ssh_configure_host)
+# @TODO: experiment with file listener to update autocomplete automatically
+#
+ssh_config_autocomplete_load() {
+  echo "* loading SSH config autocomplete"
+  complete -W "$(awk '/^\s*Host\s*/ { sub(/^\s*Host /, ""); print; }' ~/.ssh/{config,conf.d/*.conf})" ssh
+}
+ssh_config_autocomplete_load

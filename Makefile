@@ -1,6 +1,7 @@
 bin_docker_compose=docker-compose
 tree:
-	tree -a -I .git > tree.md
+	tree -a -I .git > tree.md \
+	&& git add tree.md
 pre-commit: tree
 docker-compose-login: docker-compose-up
 	$(bin_docker_compose) exec bash bash

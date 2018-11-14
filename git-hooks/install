@@ -1,0 +1,37 @@
+#!/bin/bash
+appname=$(basename "$0")
+path="$( cd "$(dirname "$0")" ; pwd -P )"
+path_git_hooks_relative="../.git/hooks"
+usage="$appname [-h] -- Install git hooks.
+where:
+  -h | --help     Show usage help."
+parseOption (){
+  short=$1
+  long=$2
+  option=$3
+  if  [[ "${option}" = "-${short}" ]] || [[ "$option" == "--$long" ]]; then
+    echo true
+    exit 0
+  fi
+  echo false
+  exit 0
+}
+option_help=$(parseOption h help $1)
+if [ "${option_help}" = true ]
+then
+  echo "${usage}"
+  exit 0
+fi
+path_git_hooks_absolute="${path}/${path_git_hooks_relative}"
+if [ ! -d "${path_git_hooks_absolute}" ]
+then
+  echo "Error; path \"${path_git_hooks_absolute}\" does not exist"
+  exit 1
+fi
+ls $path | grep -v $appname | while read line;
+do
+  from="${path}/${line}"
+  to="${path_git_hooks_absolute}/${line}"
+  echo "ln -sf $from $to"
+  ln -sf $from $to
+done

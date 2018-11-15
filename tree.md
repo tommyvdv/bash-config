@@ -1,8 +1,11 @@
 .
 ├── .bash
-│   ├── .gitkeep
+│   ├── alias
+│   │   └── color
 │   ├── make
 │   │   └── make_file_autocomplete_load
+│   ├── osx
+│   │   └── finder_cd
 │   └── ssh
 │       ├── ssh_config_autocomplete_load
 │       └── ssh_configure_host
@@ -21,4 +24,4 @@
 ├── readme.md
 └── tree.md
 
-6 directories, 15 files
+8 directories, 16 files

@@ -1,11 +1,15 @@
 #!/bin/bash
-#
 # adds ~/.ssh/config to the ssh autocomplete
 # Call whenever ssh host config changes (@see ssh_configure_host)
 # @TODO: experiment with file listener to update autocomplete automatically
-#
 ssh_config_autocomplete_load() {
-  echo "* loading SSH config autocomplete"
+  if ! command -v awk >/dev/null
+  then
+    echo "/!\ awk is unavailable.  Aborting..(~/.bash/ssh/ssh_config_autocomplete_load)"; return
+  fi
   complete -W "$(awk '/^\s*Host\s*/ { sub(/^\s*Host /, ""); print; }' ~/.ssh/{config,conf.d/*.conf})" ssh
 }
-ssh_config_autocomplete_load
+if [[ "$1" != "${INIT_KEYWORD}" ]]
+then
+  ssh_config_autocomplete_load
+fi

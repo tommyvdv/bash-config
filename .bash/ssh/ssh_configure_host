@@ -1,11 +1,8 @@
 #!/bin/bash
-#
 # Create an SSH config host entry and add my public key to that host.
-#
 # @param The identifier to use for this SSH host configuration.
 # @param The host name.
 # @param The username for that host.
-#
 ssh_configure_host() {
   local identifier=$1
   local hostname=$2
@@ -22,4 +19,7 @@ ssh_configure_host() {
     ssh_config_autocomplete_load
   fi
 }
-ssh_configure_host $@
+if [[ "$1" != "${INIT_KEYWORD}" ]]
+then
+  ssh_configure_host $@
+fi

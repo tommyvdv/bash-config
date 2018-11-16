@@ -4,7 +4,7 @@ tree:
 	&& git add tree.md
 pre-commit: tree
 docker-compose-login: docker-compose-build
-	$(bin_docker_compose) exec bash bash
+	$(bin_docker_compose) exec bash /bin/bash
 docker-compose-up:
 	$(bin_docker_compose) up --detach
 docker-compose-down:

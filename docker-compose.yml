@@ -7,3 +7,5 @@ services:
       dockerfile: docker/bash/Dockerfile
     volumes:
       - ".:/root/.dotfiles"
+    environment:
+      - TERM=xterm-256color

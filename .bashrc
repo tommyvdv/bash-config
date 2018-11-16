@@ -1,8 +1,14 @@
 #!/bin/bash
-# set variables and..
+# set preferences and..
+export EDITOR=vim
+export HISTCONTROL=erasedups
+export HISTFILESIZE=10000000
+export HISTSIZE=1000000
+# ..set variables and..
 CSPROJECTROOT='/root/projects/' # trailing slash, please
 # ..source files and..
 source "${HOME}/.bash/alias/color"
+source "${HOME}/.bash/alias/ls"
 # ..load scripts and..
 alias project_autocomplete_load=". ${HOME}/.bash/navigation/project_goto_autocomplete_load"
 project_autocomplete_load

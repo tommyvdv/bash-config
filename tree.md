@@ -1,7 +1,8 @@
 .
 ├── .bash
 │   ├── alias
-│   │   └── color
+│   │   ├── color
+│   │   └── ls
 │   ├── make
 │   │   └── make_file_autocomplete_load
 │   ├── navigation
@@ -27,4 +28,4 @@
 ├── readme.md
 └── tree.md
 
-9 directories, 18 files
+9 directories, 19 files

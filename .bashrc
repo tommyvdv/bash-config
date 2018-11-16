@@ -4,9 +4,11 @@ export EDITOR=vim
 export HISTCONTROL=erasedups
 export HISTFILESIZE=10000000
 export HISTSIZE=1000000
+export HISTTIMEFORMAT="$BLUE%d/%m/%y %T $NORMAL"
 # ..set variables and..
 CSPROJECTROOT='/root/projects/' # trailing slash, please
 # ..source files and..
+source "${HOME}/.bash/alias/app"
 source "${HOME}/.bash/alias/color"
 source "${HOME}/.bash/alias/ls"
 # ..load scripts and..

@@ -13,6 +13,7 @@ source "${HOME}/.bash/alias/color"
 source "${HOME}/.bash/alias/ls"
 # ..load scripts and..
 dir_bash=". ${HOME}/.bash"
+alias file_largest="$dir_bash/information/file_largest"
 alias project_autocomplete_load="$dir_bash/navigation/project_goto_autocomplete_load"
 project_autocomplete_load
 alias project_goto="$dir_bash/navigation/project_goto"

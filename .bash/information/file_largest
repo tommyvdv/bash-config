@@ -1,0 +1,17 @@
+#!/bin/bash
+# return, for path X, Y largest files ordered by Z
+# Usage examples:
+# $ file_largest
+# $ file_largest ~/Downloads
+# $ file_largest ~/Downloads 20
+path=$1
+path=${1%/}
+path="${path:-.}"
+numberof=$2
+numberof="${numberof:-10}"
+find "${path}" -type f -print0 \
+  | xargs -0 du -s \
+  | sort -n \
+  | tail -${numberof} \
+  | cut -f2 \
+  | xargs -I{} du -sh {}

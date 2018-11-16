@@ -11,6 +11,7 @@ CSPROJECTROOT='/root/projects/' # trailing slash, please
 source "${HOME}/.bash/alias/app"
 source "${HOME}/.bash/alias/color"
 source "${HOME}/.bash/alias/ls"
+source "${HOME}/.bash/alias/symfony"
 # ..load scripts and..
 dir_bash=". ${HOME}/.bash"
 alias file_largest="$dir_bash/information/file_largest"

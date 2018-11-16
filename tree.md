@@ -3,7 +3,8 @@
 │   ├── alias
 │   │   ├── app
 │   │   ├── color
-│   │   └── ls
+│   │   ├── ls
+│   │   └── symfony
 │   ├── information
 │   │   └── file_largest
 │   ├── make
@@ -34,4 +35,4 @@
 ├── readme.md
 └── tree.md
 
-10 directories, 24 files
+10 directories, 25 files

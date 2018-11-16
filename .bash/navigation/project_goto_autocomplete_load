@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "* completion \"project\" ${CSPROJECTROOT}"
+complete -F __list_projects project_goto
+__list_projects(){
+  local cur=${COMP_WORDS[COMP_CWORD]}
+  COMPREPLY=( $(compgen -W "$(ls ${CSPROJECTROOT})" -- $cur) )
+}

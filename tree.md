@@ -4,6 +4,9 @@
 │   │   └── color
 │   ├── make
 │   │   └── make_file_autocomplete_load
+│   ├── navigation
+│   │   ├── project_goto
+│   │   └── project_goto_autocomplete_load
 │   ├── osx
 │   │   └── finder_cd
 │   └── ssh
@@ -24,4 +27,4 @@
 ├── readme.md
 └── tree.md
 
-8 directories, 16 files
+9 directories, 18 files

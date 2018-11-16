@@ -3,14 +3,8 @@
 # By @sindresorhus taken from:
 # https://github.com/paulirish/dotfiles/commit/e67d1bc03
 # @todo: could use a darwin check
-finder_cd() {
-  if ! command -v osascript >/dev/null
-  then
-    echo "/!\ osascript is unavailable.  Aborting.. (~/.bash/osx/finder_cd)"; return
-  fi
-  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
-}
-if [[ "$1" != "${INIT_KEYWORD}" ]]
+if ! command -v osascript >/dev/null
 then
-  finder_cd
+  echo "/!\ osascript is unavailable.  Aborting.. (~/.bash/osx/finder_cd)"; return
 fi
+cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"

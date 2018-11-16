@@ -1,0 +1,10 @@
+#!/bin/bash
+ROOT=${CSPROJECTROOT}
+DIRECTORY=$1
+echo "$BLUE change dir to project '$ROOT$DIRECTORY' $NORMAL"
+if [ -d "$ROOT$DIRECTORY" ]; then
+  cd "$ROOT$DIRECTORY"
+else
+  echo "$RED Dir '$ROOT$DIRECTORY' does not exist! Taking you to root instead. $NORMAL"
+  cd $ROOT
+fi

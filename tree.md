@@ -17,6 +17,7 @@
 ├── .bashrc
 ├── .editorconfig
 ├── .gitignore
+├── .inputrc
 ├── .screenrc
 ├── Makefile
 ├── docker
@@ -29,4 +30,4 @@
 ├── readme.md
 └── tree.md
 
-9 directories, 20 files
+9 directories, 21 files

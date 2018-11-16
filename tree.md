@@ -12,7 +12,8 @@
 │   │   └── finder_cd
 │   └── ssh
 │       ├── ssh_config_autocomplete_load
-│       └── ssh_configure_host
+│       ├── ssh_configure_host
+│       └── ssh_configure_test
 ├── .bash_profile
 ├── .bashrc
 ├── .editorconfig
@@ -30,4 +31,4 @@
 ├── readme.md
 └── tree.md
 
-9 directories, 21 files
+9 directories, 22 files

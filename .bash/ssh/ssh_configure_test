@@ -1,0 +1,7 @@
+#!/bin/bash
+# Test a given ssh_config host identifier.
+local identifier=$1
+ssh -o PasswordAuthentication=no $identifier true \
+  && { tput setaf 2; echo 'Success!'; } \
+  || { tput setaf 1; echo 'Failure'; } \
+  ; tput sgr0

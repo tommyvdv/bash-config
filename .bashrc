@@ -10,14 +10,16 @@ CSPROJECTROOT='/root/projects/' # trailing slash, please
 source "${HOME}/.bash/alias/color"
 source "${HOME}/.bash/alias/ls"
 # ..load scripts and..
-alias project_autocomplete_load=". ${HOME}/.bash/navigation/project_goto_autocomplete_load"
+dir_bash=". ${HOME}/.bash"
+alias project_autocomplete_load="$dir_bash/navigation/project_goto_autocomplete_load"
 project_autocomplete_load
-alias project_goto=". ${HOME}/.bash/navigation/project_goto"
-alias make_file_autocomplete_load=". ${HOME}/.bash/make/make_file_autocomplete_load"
+alias project_goto="$dir_bash/navigation/project_goto"
+alias make_file_autocomplete_load="$dir_bash/make/make_file_autocomplete_load"
 make_file_autocomplete_load
-alias finder_cd=". ${HOME}/.bash/osx/finder_cd"
-alias ssh_config_autocomplete_load=". ${HOME}/.bash/ssh/ssh_config_autocomplete_load"
+alias finder_cd="$dir_bash/osx/finder_cd"
+alias ssh_config_autocomplete_load="$dir_bash/ssh/ssh_config_autocomplete_load"
 ssh_config_autocomplete_load
-alias ssh_configure_host=". ${HOME}/.bash/ssh/ssh_configure_host"
+alias ssh_configure_host="$dir_bash/ssh/ssh_configure_host"
+alias ssh_configure_test="$dir_bash/ssh/ssh_configure_test"
 # end with your temporary additions
 echo "Have a nice day!"

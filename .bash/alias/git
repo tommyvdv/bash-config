@@ -1,0 +1,4 @@
+#!/bin/bash
+# see .bash/git/aliases for git-specific aliases
+alias g="git" # ya srsly; I'm that lazy
+alias gs="git status --short --branch" # An annoying typo I tend to make a lot.

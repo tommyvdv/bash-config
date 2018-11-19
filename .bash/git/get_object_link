@@ -1,0 +1,34 @@
+#!/bin/bash
+# Usage:
+# $ get_object_link <object> <remote>
+# $ get_object_link
+# $ get_object_link 9d2c9cd7c
+# $ get_object_link 9d2c9cd7c upstream
+
+remote=$2
+remote="${remote:-origin}"
+
+git remote | grep "${remote}" > /dev/null
+if [ $? -ne 0 ]; then
+  echo "/!\ Couldn\'t find remote \"${remote}\"."
+fi
+
+push_url=$(git remote get-url --push "${remote}")
+domain=$(echo $push_url \
+  | sed -e 's/\(^.*@\)\(.*\)\(:.*$\)/\2/')
+repository=$(echo $push_url \
+  | sed -e 's/\(^.*:\)\(.*\)\(\.git.*$\)/\2/')
+protocol="https"
+commit_slug="commit"
+commit_slug_latest=$(git log --pretty=format:"%h" --no-patch -n 1)
+object=$1
+object="${object:-$commit_slug_latest}"
+
+git show "${object}" | grep "commit" > /dev/null
+if [ $? -ne 0 ]; then
+  echo "/!\ Couldn\'t find object \"${object}\"."
+  exit 75
+fi
+
+link="${protocol}://${domain}/${repository}/${commit_slug}/${object}"
+echo "${link}"

@@ -7,6 +7,9 @@
 │   │   ├── git
 │   │   ├── ls
 │   │   └── symfony
+│   ├── git
+│   │   ├── aliases
+│   │   └── get_object_link
 │   ├── information
 │   │   └── file_largest
 │   ├── make
@@ -37,4 +40,4 @@
 ├── readme.md
 └── tree.md
 
-10 directories, 27 files
+11 directories, 29 files

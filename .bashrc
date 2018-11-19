@@ -16,14 +16,13 @@ source "${HOME}/.bash/alias/symfony"
 # ..load scripts and..
 alias file_largest="$DIR_BASH/information/file_largest"
 alias project_autocomplete_load="$DIR_BASH/navigation/project_goto_autocomplete_load"
-project_autocomplete_load
 alias project_goto="$DIR_BASH/navigation/project_goto"
 alias make_file_autocomplete_load="$DIR_BASH/make/make_file_autocomplete_load"
-make_file_autocomplete_load
 alias finder_cd="$DIR_BASH/osx/finder_cd"
 alias ssh_config_autocomplete_load="$DIR_BASH/ssh/ssh_config_autocomplete_load"
-ssh_config_autocomplete_load
 alias ssh_configure_host="$DIR_BASH/ssh/ssh_configure_host"
 alias ssh_configure_test="$DIR_BASH/ssh/ssh_configure_test"
+# ..source files that contain references to these aliases..
+source "${HOME}/.bash/completions"
 # end with your temporary additions
 echo "Have a nice day!"

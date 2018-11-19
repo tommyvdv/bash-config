@@ -1,0 +1,4 @@
+#!/bin/bash
+make_file_autocomplete_load
+project_autocomplete_load
+ssh_config_autocomplete_load

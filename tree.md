@@ -1,4 +1,5 @@
 .
+├── .ackrc
 ├── .bash
 │   ├── alias
 │   │   ├── app
@@ -7,6 +8,7 @@
 │   │   ├── git
 │   │   ├── ls
 │   │   └── symfony
+│   ├── completions
 │   ├── git
 │   │   ├── aliases
 │   │   └── get_object_link
@@ -26,9 +28,13 @@
 ├── .bash_profile
 ├── .bashrc
 ├── .editorconfig
+├── .gitconfig
+├── .gitconfig-user.dist
 ├── .gitignore
+├── .gitignore-global
 ├── .inputrc
 ├── .screenrc
+├── .tmux.conf
 ├── Makefile
 ├── docker
 │   └── bash
@@ -40,4 +46,4 @@
 ├── readme.md
 └── tree.md
 
-11 directories, 29 files
+11 directories, 35 files

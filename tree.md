@@ -4,6 +4,7 @@
 │   │   ├── app
 │   │   ├── color
 │   │   ├── docker
+│   │   ├── git
 │   │   ├── ls
 │   │   └── symfony
 │   ├── information
@@ -36,4 +37,4 @@
 ├── readme.md
 └── tree.md
 
-10 directories, 26 files
+10 directories, 27 files

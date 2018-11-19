@@ -1,0 +1,6 @@
+#!/bin/bash
+alias dck="echo '${BLUE}-- docker cleanup: kill..${NORMAL}' && docker ps -q | xargs docker kill"
+alias dcrm="echo '${BLUE}-- docker cleanup: rm..${NORMAL}' && docker ps -q | xargs docker rm"
+alias dcrmi="echo '${BLUE}-- docker cleanup: rmi..${NORMAL}' && docker images -q -f dangling=true | xargs docker rmi"
+alias dcrmia="echo '${BLUE}-- docker cleanup: rmia..${NORMAL}' && docker images -q | xargs docker rmi"
+alias dockercleanup="echo '${BLUE}-- docker cleanup: all..${NORMAL}' && dck; dcrm; dcrmi; dcrmia"

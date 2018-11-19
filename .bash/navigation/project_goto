@@ -1,5 +1,5 @@
 #!/bin/bash
-ROOT=${CSPROJECTROOT}
+ROOT=${DIR_ROOT_PROJECT_GOTO}
 DIRECTORY=$1
 echo "$BLUE change dir to project '$ROOT$DIRECTORY' $NORMAL"
 if [ -d "$ROOT$DIRECTORY" ]; then

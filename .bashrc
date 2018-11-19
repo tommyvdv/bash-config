@@ -6,24 +6,24 @@ export HISTFILESIZE=10000000
 export HISTSIZE=1000000
 export HISTTIMEFORMAT="$BLUE%d/%m/%y %T $NORMAL"
 # ..set variables and..
-CSPROJECTROOT='/root/projects/' # trailing slash, please
+DIR_BASH=". ${HOME}/.bash"
+DIR_ROOT_PROJECT_GOTO='/root/projects/' # trailing slash, please
 # ..source files and..
 source "${HOME}/.bash/alias/app"
 source "${HOME}/.bash/alias/color"
 source "${HOME}/.bash/alias/ls"
 source "${HOME}/.bash/alias/symfony"
 # ..load scripts and..
-dir_bash=". ${HOME}/.bash"
-alias file_largest="$dir_bash/information/file_largest"
-alias project_autocomplete_load="$dir_bash/navigation/project_goto_autocomplete_load"
+alias file_largest="$DIR_BASH/information/file_largest"
+alias project_autocomplete_load="$DIR_BASH/navigation/project_goto_autocomplete_load"
 project_autocomplete_load
-alias project_goto="$dir_bash/navigation/project_goto"
-alias make_file_autocomplete_load="$dir_bash/make/make_file_autocomplete_load"
+alias project_goto="$DIR_BASH/navigation/project_goto"
+alias make_file_autocomplete_load="$DIR_BASH/make/make_file_autocomplete_load"
 make_file_autocomplete_load
-alias finder_cd="$dir_bash/osx/finder_cd"
-alias ssh_config_autocomplete_load="$dir_bash/ssh/ssh_config_autocomplete_load"
+alias finder_cd="$DIR_BASH/osx/finder_cd"
+alias ssh_config_autocomplete_load="$DIR_BASH/ssh/ssh_config_autocomplete_load"
 ssh_config_autocomplete_load
-alias ssh_configure_host="$dir_bash/ssh/ssh_configure_host"
-alias ssh_configure_test="$dir_bash/ssh/ssh_configure_test"
+alias ssh_configure_host="$DIR_BASH/ssh/ssh_configure_host"
+alias ssh_configure_test="$DIR_BASH/ssh/ssh_configure_test"
 # end with your temporary additions
 echo "Have a nice day!"

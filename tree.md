@@ -3,6 +3,7 @@
 │   ├── alias
 │   │   ├── app
 │   │   ├── color
+│   │   ├── docker
 │   │   ├── ls
 │   │   └── symfony
 │   ├── information
@@ -35,4 +36,4 @@
 ├── readme.md
 └── tree.md
 
-10 directories, 25 files
+10 directories, 26 files

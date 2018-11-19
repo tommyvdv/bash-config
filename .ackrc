@@ -1,0 +1,13 @@
+#!/bin/bash
+--flush
+--follow
+--ignore-dir=docroot
+--ignore-dir=www
+--smart-case
+--sort-files
+--type-add=html=.tpl,.twig
+--type-add=js=json
+--type-add=vim=vimrc
+--type-set=MARKDOWN=md,mkd,markdown
+--type-set=css=sass
+--type-set=txt=.rst

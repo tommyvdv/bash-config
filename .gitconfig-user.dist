@@ -1,0 +1,6 @@
+# This contains sensitive data and will only serve as a template.
+# These definitions should serve as documentation as to what is used in scripts
+# tightly coupled with the use of the git configuration of this repository.
+[user]
+  name = username
+  email = email@adres.com

@@ -10,7 +10,6 @@
 │   │   └── symfony
 │   ├── completions
 │   ├── git
-│   │   ├── aliases
 │   │   └── get_object_link
 │   ├── information
 │   │   └── file_largest
@@ -81,6 +80,7 @@
 ├── .bashrc
 ├── .editorconfig
 ├── .gitconfig
+├── .gitconfig-alias
 ├── .gitconfig-user.dist
 ├── .gitignore
 ├── .gitignore-global

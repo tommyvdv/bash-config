@@ -11,6 +11,7 @@ DIR_ROOT_PROJECT_GOTO='/root/projects/' # trailing slash, please
 # ..source files and..
 source "${HOME}/.bash/alias/app"
 source "${HOME}/.bash/alias/color"
+source "${HOME}/.bash/alias/git"
 source "${HOME}/.bash/alias/ls"
 source "${HOME}/.bash/alias/symfony"
 # ..load scripts and..
@@ -22,7 +23,10 @@ alias finder_cd="$DIR_BASH/osx/finder_cd"
 alias ssh_config_autocomplete_load="$DIR_BASH/ssh/ssh_config_autocomplete_load"
 alias ssh_configure_host="$DIR_BASH/ssh/ssh_configure_host"
 alias ssh_configure_test="$DIR_BASH/ssh/ssh_configure_test"
+alias git_get_object_link="$DIR_BASH/git/get_object_link"
 # ..source files that contain references to these aliases..
 source "${HOME}/.bash/completions"
+# ..add known paths..
+export PATH="$PATH:$HOME/bin"
 # end with your temporary additions
 echo "Have a nice day!"

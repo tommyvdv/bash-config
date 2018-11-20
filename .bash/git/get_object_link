@@ -11,6 +11,7 @@ remote="${remote:-origin}"
 git remote | grep "${remote}" > /dev/null
 if [ $? -ne 0 ]; then
   echo "/!\ Couldn\'t find remote \"${remote}\"."
+  exit 74
 fi
 
 push_url=$(git remote get-url --push "${remote}")

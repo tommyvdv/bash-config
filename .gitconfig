@@ -1,61 +1,14 @@
 [core]
   whitespace = tab-in-indent diff --check,tab-in-indent
-
-# Allow for more regex fun.
 [grep]
   extendRegexp = true
-
-[include]
-  path = .gitconfig-user
-
 [pretty]
   shortnsweet = %C(green)%h%C(blue)%d%C(reset) %s  %C(yellow)%an%C(reset), %cr
   whowhenwhere = %C(red) %cn %>|(40) %C(blue) %ar %>|(80) %C(reset)
-
 [color]
   ui = auto
-
 [push]
   default = simple
-
-[alias]
-  aa = add --all
-  amend = commit --amend
-  au = add --update
-  ci = commit
-  co = checkout
-  d = diff
-  dc = diff --cached
-  info = "!git remote -v && git branch -a"
-  l = "!echo && (git --no-pager log -15 --pretty=shortnsweet) && echo"
-  ll = log --pretty=shortnsweet --graph
-  lt = tag -n -n1
-  pullff = pull --ff-only
-  s = status --short --branch
-  su = diff --name-only --diff-filter=U
-  pt = !git tag -l | xargs git tag -d && git fetch -t
-  contains = !sh -c 'git branch -a --contains $1' -
-  branchauthors = "! for branch in `git branch -r | grep -v HEAD`;do echo `git show --pretty=whowhenwhere $branch | head -n 1` \t$branch; done | sort -r"
-  oldest-ancestor = !zsh -c 'diff --old-line-format='' --new-line-format='' <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
-  pull-all-branches = "!for b in `git branch -r | grep -v -- '->'`; do git branch --track ${b##origin/} $b; done"
-  submodules = "!git config --file .gitmodules --get-regexp path | awk '{ print $2 }'"
-
-  # [STOLEN] DAS
-  a = add
-  aap = add --all -p
-  ap = add -p
-  cop = checkout -p
-  aan = "!git add $(git ls-files -o --exclude-standard)"
-  cim = commit -m
-  di = diff
-  hist = log --pretty=format:\"%C(yellow)%h %ad %Creset| %s%d %C(green)[%an]%Creset\" --graph --date=short
-
-  # [MINE]
-  ls = log HEAD --date=relative --pretty=format:'%C(yellow)%h %C(green)%an%Creset %s' -n 10
-  lsn = log HEAD --date=relative --pretty=format:'%C(yellow)%h %C(green)%an%Creset %s' -n
-  lst = log --date=relative --pretty=format:'%ad %C(yellow)%h %C(green)%an%Creset %s' -n 10
-  lstn = log --date=relative --pretty=format:'%ad %C(yellow)%h %C(green)%an%Creset %s' -n
-  pl = pull
-  ft = fetch
-  bwransj = branch
-  cc = cherry-pick
+[include]
+  path = .gitconfig-user
+  path = .gitconfig-alias

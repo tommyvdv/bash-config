@@ -9,6 +9,7 @@ export HISTTIMEFORMAT="$BLUE%d/%m/%y %T $NORMAL"
 DIR_BASH=". ${HOME}/.bash"
 DIR_ROOT_PROJECT_GOTO='/root/projects/' # trailing slash, please
 # ..source files and..
+source "${HOME}/.bash/prompt"
 source "${HOME}/.bash/alias/app"
 source "${HOME}/.bash/alias/color"
 source "${HOME}/.bash/alias/git"

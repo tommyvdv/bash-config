@@ -1,1 +1,6 @@
+.bash_history
 .gitconfig-user
+.ssh/
+projects/
+repo.bundle
+tmp/

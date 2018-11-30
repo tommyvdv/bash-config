@@ -5,14 +5,28 @@ RUN echo "install dependencies" \
   && apt-get --assume-yes install \
     git \
     tree
-COPY .bash /root/.bash
-COPY .bash_profile /root/.bash_profile
-COPY .bashrc /root/.bashrc
-COPY .gitconfig /root/.gitconfig
-COPY .gitignore-global /root/.gitignore-global
+
+RUN echo "cleanup" \
+  && apt-get clean \
+  && rm -rf /root/.bashrc /root/.profile /var/lib/apt/lists/* \
+  && find /tmp/ -maxdepth 1 -mindepth 1 -exec rm -rf {} \;
+
+RUN mkdir -p /root/tmp
+COPY repo.bundle /root/tmp/repo.bundle
+RUN echo "clone repository" \
+  && cd /root \
+  && git init \
+  && git remote add origin /root/tmp/repo.bundle \
+  && git pull origin master
+
+# COPY .bash /root/.bash
+# COPY .bash_profile /root/.bash_profile
+# COPY .bashrc /root/.bashrc
+# COPY .gitconfig /root/.gitconfig
+# COPY .gitignore-global /root/.gitignore-global
 COPY .gitconfig-user.dist /root/.gitconfig-user
-COPY .gitconfig-alias /root/.gitconfig-alias
-COPY bin /root/bin
+# COPY .gitconfig-alias /root/.gitconfig-alias
+# COPY bin /root/bin
 RUN echo "Install ssh directory structure" \
   && mkdir -p /root/.ssh/conf.d \
   && touch /root/.ssh/config /root/.ssh/conf.d/default.conf
@@ -29,10 +43,7 @@ RUN echo "Install git fixture" \
   && touch .gitignore readme.md \
   && git add --all \
   && git commit -m 'initial commit of a fixture repository'
-RUN echo "cleanup" \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* \
-  && find /tmp/ -maxdepth 1 -mindepth 1 -exec rm -rf {} \;
+
 RUN echo "$HOME directory structure:" \
   && cd /root \
   && tree -a -L 2

@@ -28,10 +28,13 @@ then
   echo "Error; path \"${path_git_hooks_absolute}\" does not exist"
   exit 1
 fi
-ls $path | grep -v $appname | while read line;
+echo "-- adding the following.."
+ls $path | grep -v install | while read line;
 do
   from="${path}/${line}"
   to="${path_git_hooks_absolute}/${line}"
   echo "ln -sf $from $to"
   ln -sf $from $to
 done
+echo "-- result"
+ls -l "${path_git_hooks_absolute}" | grep -v "*.sample"

@@ -1,0 +1,11 @@
+#!/bin/bash
+appname=$(basename "$0")
+path="$( cd "$(dirname "$0")" ; pwd -P )"
+path_git_hooks_relative="../.git/hooks"
+usage="$appname [] -- Remove git hooks."
+path_git_hooks_absolute="${path}/${path_git_hooks_relative}"
+echo "-- removing all.."
+find "${path_git_hooks_absolute}" -type l -not -name "*.sample"
+find "${path_git_hooks_absolute}" -type l -not -name "*.sample" -exec rm {} \;
+echo "-- result"
+ls -l "${path_git_hooks_absolute}"

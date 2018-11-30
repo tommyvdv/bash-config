@@ -72,6 +72,7 @@
 │   │   └── project_goto_autocomplete_load
 │   ├── osx
 │   │   └── finder_cd
+│   ├── prompt
 │   └── ssh
 │       ├── ssh_config_autocomplete_load
 │       ├── ssh_configure_host
@@ -84,10 +85,13 @@
 ├── .gitconfig-user.dist
 ├── .gitignore
 ├── .gitignore-global
+├── .gitmodules
 ├── .inputrc
 ├── .screenrc
 ├── .tmux.conf
 ├── Makefile
+├── bin
+│   └── .gitkeep
 ├── docker
 │   └── bash
 │       └── Dockerfile
@@ -99,4 +103,4 @@
 ├── repo.bundle
 └── tree.md
 
-15 directories, 84 files
+16 directories, 87 files

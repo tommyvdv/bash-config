@@ -7,6 +7,7 @@ export HISTSIZE=1000000
 export HISTTIMEFORMAT="$BLUE%d/%m/%y %T $NORMAL"
 # ..set variables and..
 DIR_BASH=". ${HOME}/.bash"
+PATH_GIT_PROMPT="/etc/bash_completion.d/git-prompt"
 DIR_ROOT_PROJECT_GOTO='/root/projects/' # trailing slash, please
 # ..source files and..
 source "${HOME}/.bash/prompt"

@@ -3,6 +3,10 @@ tree:
 	tree -a -I .git > tree.md \
 	&& git add tree.md
 pre-commit: tree
+git-hook-install:
+	git-hooks/install
+git-hook-uninstall:
+	git-hooks/uninstall
 git-bundle:
 	git submodule init
 	git submodule update

@@ -45,8 +45,7 @@ COPY .bash/lib /root/.bash/lib
 
 RUN echo "Carrying out tasks you should do manually" \
   && cd /root \
-  && cp .gitconfig-user.dist .gitconfig-user \
-  && rm .gitconfig-user.dist
+  && cp .bash/git/.gitconfig-user.dist .bash/git/.gitconfig-user
 RUN echo "Install project fixtures" \
   && mkdir -p /root/projects/projectA /root/projects/projectB /root/projects/projectC
 RUN echo "Install host fixtures" \

@@ -1,4 +1,7 @@
 [alias]
+  ir = rebase -i
+  irr = rebase -i --root
+  make-bundle = "!hash=$(git rev-parse --short HEAD); filename=$(echo repo.$(git rev-parse --short HEAD).bundle); git bundle create ${filename} --all && echo ${GREEN}👍 Created bundle: ${filename}${NORMAL}"
   aa = add --all
   amend = commit --amend
   au = add --update

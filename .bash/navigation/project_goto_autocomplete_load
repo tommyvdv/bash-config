@@ -1,6 +1,15 @@
 #!/bin/bash
+script_dir=".bash/navigation/project_goto_autocomplete_load"
 echo "* completion \"project\" ${DIR_ROOT_PROJECT_GOTO}"
-complete -F __list_projects project_goto
+if [ ! -d "$ROOT" ]; then
+  echo "  /!\ project directory structure incompatible.  Aborting..(${script_dir})"
+  echo "  expected tree:"
+  echo "  $HOME/projects"
+  echo "  |-- projectA"
+  echo "  \`-- projectB"
+else
+  complete -F __list_projects project_goto
+fi
 __list_projects(){
   local cur=${COMP_WORDS[COMP_CWORD]}
   COMPREPLY=( $(compgen -W "$(ls ${DIR_ROOT_PROJECT_GOTO})" -- $cur) )

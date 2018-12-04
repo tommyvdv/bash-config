@@ -2,10 +2,23 @@
 # adds ~/.ssh/config to the ssh autocomplete
 # Call whenever ssh host config changes (@see ssh_configure_host)
 # @TODO: experiment with file listener to update autocomplete automatically
+script_dir=".bash/ssh/ssh_config_autocomplete_load"
+echo "* completion \"ssh_config\" ${dir}"
+dir=$HOME/.ssh/{config,conf.d/*.conf}
 if ! command -v awk >/dev/null
 then
-  echo "/!\ awk is unavailable.  Aborting..(~/.bash/ssh/ssh_config_autocomplete_load)"; return
+  echo "  /!\ awk is unavailable.  Aborting..(${script_dir})";
 fi
-dir="$HOME/.ssh/{config,conf.d/*.conf}"
-echo "* completion \"ssh_config\" ${dir}"
-complete -W "$(awk '/^\s*Host\s*/ { sub(/^\s*Host /, ""); print; }' $HOME/.ssh/{config,conf.d/*.conf})" ssh
+ls -l ${dir} 2>/dev/null
+exit_code=$?
+if [ $exit_code -ne 0 ]
+then
+  echo "  /!\ ssh directory structure is incompatible.  Aborting..(${script_dir})"
+  echo "  expected tree:"
+  echo "  $HOME/.ssh"
+  echo "  |-- conf.d"
+  echo "  |   \`-- default.conf"
+  echo "  \`-- config"
+else
+  complete -W "$(awk '/^\s*Host\s*/ { sub(/^\s*Host /, ""); print; }' $HOME/.ssh/{config,conf.d/*.conf})" ssh
+fi

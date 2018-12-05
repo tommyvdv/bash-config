@@ -17,6 +17,7 @@ source "${HOME}/.bash/alias/color"
 source "${HOME}/.bash/alias/git"
 source "${HOME}/.bash/alias/ls"
 source "${HOME}/.bash/alias/symfony"
+source "${HOME}/.bash/less/lesspipe"
 # ..load scripts and..
 alias file_largest="$DIR_BASH/information/file_largest"
 alias project_autocomplete_load="$DIR_BASH/navigation/project_goto_autocomplete_load"

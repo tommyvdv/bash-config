@@ -1,0 +1,10 @@
+#!/bin/bash
+# Should lesspipe be installed; use it.
+# Linux users' LESS should allow it without additional software.
+# OSX users are less lucky.
+# $ brew install lesspipe
+# Why?
+# * Because it allows you to show the contents of zip files.
+if [ -x /usr/local/bin/lesspipe.sh ] ; then
+  export LESSOPEN="|/usr/local/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
+fi

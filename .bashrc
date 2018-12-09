@@ -8,7 +8,6 @@ export HISTTIMEFORMAT="$BLUE%d/%m/%y %T $NORMAL"
 # ..set variables and..
 export DIR_BASH="${HOME}/.bash"
 export PATH_GIT_PROMPT="/etc/bash_completion.d/git-prompt"
-export PATH_GIT_PROMPT="/etc/bash_completion.d/git-prompt"
 export DIR_ROOT_PROJECT_GOTO='/root/projects/' # trailing slash, please
 export DIR_SSH="${HOME}/.ssh"
 # ..source files and..

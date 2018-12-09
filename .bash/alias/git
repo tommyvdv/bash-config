@@ -2,3 +2,4 @@
 # see .bash/git/aliases for git-specific aliases
 alias g="git" # ya srsly; I'm that lazy
 alias gs="git status --short --branch" # An annoying typo I tend to make a lot.
+alias git_branch_status="$DIR_BASH/lib/bill-auger/git-branch-status/git-branch-status"

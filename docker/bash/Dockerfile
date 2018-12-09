@@ -38,9 +38,9 @@ RUN echo "Clone repository from bundled repository" \
   && cd /root \
   && git init \
   && git remote add origin /root/tmp/repo.bundle \
-  && git pull origin master
+  && git pull origin master \
   # @todo: This shouldn't fail; but it does; Find out why.
-  # && git submodule init \
+  && git submodule init
   # && git submodule update
 COPY .bash/lib /root/.bash/lib
 

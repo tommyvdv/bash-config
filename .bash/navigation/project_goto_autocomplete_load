@@ -1,10 +1,10 @@
 #!/bin/bash
-script_dir=".bash/navigation/project_goto_autocomplete_load"
+script_dir="${DIR_BASH}/navigation/project_goto_autocomplete_load"
 echo "* completion \"project\" ${DIR_ROOT_PROJECT_GOTO}"
-if [ ! -d "$ROOT" ]; then
-  echo "  /!\ project directory structure incompatible.  Aborting..(${script_dir})"
+if [ ! -d "$DIR_ROOT_PROJECT_GOTO" ]; then
+  echo "  ${BRIGHT}${RED}/!\\${NORMAL} project directory structure incompatible.  Aborting..(${script_dir})"
   echo "  expected tree:"
-  echo "  $HOME/projects"
+  echo "  ${DIR_ROOT_PROJECT_GOTO}"
   echo "  |-- projectA"
   echo "  \`-- projectB"
 else

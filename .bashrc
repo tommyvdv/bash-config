@@ -11,7 +11,7 @@ export PATH_GIT_PROMPT="/etc/bash_completion.d/git-prompt"
 export DIR_ROOT_PROJECT_GOTO='/root/projects/' # trailing slash, please
 export DIR_SSH="${HOME}/.ssh"
 # ..source files and..
-source "${HOME}/.bash/prompt"
+source "${HOME}/.bash/prompt" 2>&1 >/dev/null
 source "${HOME}/.bash/alias/app"
 source "${HOME}/.bash/alias/color"
 source "${HOME}/.bash/alias/git"

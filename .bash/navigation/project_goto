@@ -1,10 +1,10 @@
 #!/bin/bash
-ROOT=${DIR_ROOT_PROJECT_GOTO}
 DIRECTORY=$1
-echo "$BLUE change dir to project '$ROOT$DIRECTORY' $NORMAL"
-if [ -d "$ROOT$DIRECTORY" ]; then
-  cd "$ROOT$DIRECTORY"
+DIR_TARGET="$DIR_ROOT_PROJECT_GOTO$DIRECTORY"
+if [ -d "$DIR_TARGET" ]; then
+  echo "$BLUE change dir to project '$DIR_TARGET' $NORMAL"
+  cd "$DIR_TARGET"
 else
-  echo "$RED Dir '$ROOT$DIRECTORY' does not exist! Taking you to root instead. $NORMAL"
-  cd $ROOT
+  echo "$RED Dir '$DIR_TARGET' does not exist! Taking you to root instead. $NORMAL"
+  cd $DIR_ROOT_PROJECT_GOTO
 fi

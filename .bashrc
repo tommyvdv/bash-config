@@ -23,13 +23,13 @@ alias project_autocomplete_load=". ${DIR_BASH}/navigation/project_goto_autocompl
 alias make_file_autocomplete_load=". $DIR_BASH/make/make_file_autocomplete_load"
 alias ssh_config_autocomplete_load=". $DIR_BASH/ssh/ssh_config_autocomplete_load"
 # ..load scripts and..
-alias file_largest="$DIR_BASH/information/file_largest"
-alias project_goto="$DIR_BASH/navigation/project_goto"
-alias finder_cd="$DIR_BASH/osx/finder_cd"
-alias ssh_configure_host="$DIR_BASH/ssh/ssh_configure_host"
-alias ssh_configure_test="$DIR_BASH/ssh/ssh_configure_test"
-alias git_get_object_link="$DIR_BASH/git/get_object_link"
-alias git_rewrite_author="$DIR_BASH/git/rewrite_author"
+alias file_largest=". $DIR_BASH/information/file_largest"
+alias project_goto=". $DIR_BASH/navigation/project_goto"
+alias finder_cd=". $DIR_BASH/osx/finder_cd"
+alias ssh_configure_host=". $DIR_BASH/ssh/ssh_configure_host"
+alias ssh_configure_test=". $DIR_BASH/ssh/ssh_configure_test"
+alias git_get_object_link=". $DIR_BASH/git/get_object_link"
+alias git_rewrite_author=". $DIR_BASH/git/rewrite_author"
 # ..source files that contain references to these aliases..
 source "${HOME}/.bash/completions"
 # ..add known paths..

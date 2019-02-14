@@ -5,7 +5,8 @@ RUN echo "Install dependencies" \
   && apt-get --assume-yes install \
     git \
     tree \
-    vim
+    vim \
+    bc
 RUN echo "Perform cleanup" \
   && apt-get clean \
   && rm -rf /root/.bashrc /root/.profile /var/lib/apt/lists/* \

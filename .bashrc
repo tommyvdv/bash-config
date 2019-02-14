@@ -29,6 +29,7 @@ alias finder_cd=". $DIR_BASH/osx/finder_cd"
 alias ssh_configure_host=". $DIR_BASH/ssh/ssh_configure_host"
 alias ssh_configure_test=". $DIR_BASH/ssh/ssh_configure_test"
 alias git_get_object_link=". $DIR_BASH/git/get_object_link"
+alias git_get_commit_score=". $DIR_BASH/git/get_commit_score"
 alias git_rewrite_author=". $DIR_BASH/git/rewrite_author"
 # ..source files that contain references to these aliases..
 source "${HOME}/.bash/completions"

@@ -1,0 +1,23 @@
+#!/bin/bash
+# (Crudely) score a commit based on:
+#  * ratio: [message lines]:[number of changes]
+# Usage:
+# $ get_commit_score <commit_hash>
+# $ get_commit_score
+if [[ ! -d .git ]]; then
+  echo "This doesn't seem to be a GIT repository.."
+  exit 1
+fi;
+commit="$1"
+stat_lines=$(git show --shortstat --pretty="" | awk '{ print $1+$4+$6 }')
+comment_lines=$(git log -1 --pretty=%B $commit | cat | wc -l)
+if [ "$comment_lines" -gt "$stat_lines" ]; then
+  min=$stat_lines
+  max=$comment_lines
+else
+  min=$comment_lines
+  max=$stat_lines
+fi;
+score=$(bc -l <<< "(1 - ($min / $max)) * 100")
+commit=$(git show $commit --pretty=format:"%h" --no-patch)
+echo "$commit scored $score blurns"

@@ -13,7 +13,7 @@ git-bundle:
 	git bundle create repo.bundle --all
 docker-compose-login: docker-compose-build
 	$(bin_docker_compose) exec bash /bin/bash
-docker-compose-up: bundle
+docker-compose-up: git-bundle
 	$(bin_docker_compose) up --detach
 docker-compose-down:
 	$(bin_docker_compose) down

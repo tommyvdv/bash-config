@@ -1,5 +1,3 @@
 #!/bin/bash
-term "screen-256color"
-hardstatus on
-hardstatus alwayslastline "%{=b}%{G}%{b}%w"
-defscrollback 5000
+# load custom .screenrc
+source "${HOME}/.bash/.screenrc"

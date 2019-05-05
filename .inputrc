@@ -1,13 +1,3 @@
 #!/bin/bash
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-set show-all-if-ambiguous on
-# TAB auto completion case insensitive
-set completion-ignore-case on
-TAB: menu-complete
-# Allow UTF-8 input and output
-set input-meta on
-set output-meta on
-set convert-meta off
-# No bell, no flash
-# set bell-style none
+# load custom .inputrc
+source "${HOME}/.bash/.inputrc"

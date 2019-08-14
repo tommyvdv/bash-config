@@ -36,17 +36,8 @@ RUN echo "Install ssh directory structure" \
 RUN mkdir -p /root/tmp
 COPY repo.bundle /root/tmp/repo.bundle
 RUN echo "Clone repository from bundled repository" \
-  && cd /root \
-  && git clone /root/tmp/repo.bundle bash-config
-  # && mkdir /bash-config \
-  # && cd /root/bash-config
-  # && git init \
-  # && git remote add origin /root/tmp/repo.bundle \
-  # && git pull origin master \
-  # @todo: This shouldn't fail; but it does; Find out why.
-  # && git submodule init
-  # && git submodule update
-# COPY .bash/lib /root/.bash/lib
+  && cd \
+  && git clone --recurse-submodules /root/tmp/repo.bundle bash-config
 
 RUN echo "Carrying out tasks you should do manually" \
   && cd \

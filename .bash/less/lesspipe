@@ -5,6 +5,14 @@
 # $ brew install lesspipe
 # Why?
 # * Because it allows you to show the contents of zip files.
-if [ -x /usr/local/bin/lesspipe.sh ] ; then
+BINLESSPIPE="lesspipe.sh"
+BINBREW="brew"
+if [[ $(command -v $BINLESSPIPE) == "" ]]; then
+  echo "/!\ $BINLESSPIPE not installed.."
+  if [[ $(command -v $BINBREW) == "" ]]; then
+    echo "Install it using brew:"
+    echo "\$ brew install lesspipe"
+  fi
+else
   export LESSOPEN="|/usr/local/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
 fi

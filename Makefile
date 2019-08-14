@@ -11,7 +11,7 @@ git-bundle:
 	git submodule init
 	git submodule update
 	git bundle create repo.bundle --all
-docker-compose-login: docker-compose-build
+docker-compose-login:
 	$(bin_docker_compose) exec bash /bin/bash
 docker-compose-up: git-bundle
 	$(bin_docker_compose) up --detach

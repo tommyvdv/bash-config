@@ -15,18 +15,18 @@ RUN echo "Install ssh directory structure" \
   && mkdir -p /root/.ssh/conf.d \
   && chmod 700 /root/.ssh \
   && touch /root/.ssh/config /root/.ssh/conf.d/default.conf /root/.ssh/known_hosts \
-  # Introduced with version 7.3: https://www.openssh.com/txt/release-7.3
-  # @todo: Find a way to upgrade this son'bich.
-#   && echo '# Include config files.\n\
-# Include conf.d/*\n' > /root/.ssh/config \
-  && echo 'Host github.com\n\
+  && echo '# Introduced with version 7.3: https://www.openssh.com/txt/release-7.3\n\
+  # Current version of this container is:\n\
+  # OpenSSH_6.7p1 Debian-5+deb8u8, OpenSSL 1.0.1t  3 May 2016\n\
+  # Include ~/.ssh/conf.d/*\n\
+  \n\
+  Host github.com\n\
   User git\n\
   Hostname github.com\n\
   PreferredAuthentications publickey\n\
   Port 22\n\
   IdentityFile /root/.ssh/id_rsa\n' > /root/.ssh/config \
-  # IdentityFile /root/.ssh/id_rsa\n' > /root/.ssh/conf.d/github.com.conf \
-  # Generate a wildly insecure key-pair;
+  # Generate a wildly insecure key-pair without a passphrase;
   && ssh-keygen -b 4096 -t rsa -C "email@adres.com" -f /root/.ssh/id_rsa -q -N "" \
   && ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
   # @todo: This shouldn't fail; but it does; Find out why.

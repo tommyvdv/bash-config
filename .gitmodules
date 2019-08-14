@@ -1,6 +1,6 @@
 [submodule ".bash/lib/magicmonty/bash-git-prompt"]
 	path = .bash/lib/magicmonty/bash-git-prompt
-	url = git@github.com:magicmonty/bash-git-prompt.git
+	url = https://github.com/magicmonty/bash-git-prompt.git
 [submodule ".bash/lib/bill-auger/git-branch-status"]
 	path = .bash/lib/bill-auger/git-branch-status
-	url = git@github.com:bill-auger/git-branch-status.git
+	url = https://github.com/bill-auger/git-branch-status.git

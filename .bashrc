@@ -5,6 +5,12 @@ export HISTCONTROL=erasedups
 export HISTFILESIZE=10000000
 export HISTSIZE=1000000
 export HISTTIMEFORMAT="$BLUE%d/%m/%y %T $NORMAL"
+# ..btw, how verbose do you allow me to be..
+export BASHCONFIGLOADERVERBOSITY=0
+# ├── 0: keep quiet
+# ├── 1: verbose
+# ├── 2: very verbose
+# └── 3: debug mode
 # ..set variables and..
 export DIR_BASH="${HOME}/.bash"
 export PATH_GIT_PROMPT="/etc/bash_completion.d/git-prompt"
@@ -36,4 +42,6 @@ source "${HOME}/.bash/completions"
 # ..add known paths..
 export PATH="$PATH:$HOME/bin"
 # end with your temporary additions
-echo "Have a nice day!"
+if [ "$BASHCONFIGLOADERVERBOSITY" -gt "0" ]; then
+  echo "Have a nice day!"
+fi

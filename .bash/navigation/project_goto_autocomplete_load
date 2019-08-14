@@ -1,6 +1,8 @@
 #!/bin/bash
 script_dir="${DIR_BASH}/navigation/project_goto_autocomplete_load"
-echo "* completion \"project\" ${DIR_ROOT_PROJECT_GOTO}"
+if [ "$BASHCONFIGLOADERVERBOSITY" -gt "0" ]; then
+  echo "* completion \"project\" ${DIR_ROOT_PROJECT_GOTO}"
+fi
 if [ ! -d "$DIR_ROOT_PROJECT_GOTO" ]; then
   echo "  ${BRIGHT}${RED}/!\\${NORMAL} project directory structure incompatible.  Aborting..(${script_dir})"
   echo "  expected tree:"

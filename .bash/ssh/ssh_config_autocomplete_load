@@ -4,7 +4,9 @@
 # @TODO: experiment with file listener to update autocomplete automatically
 script_dir="${DIR_BASH}/ssh/ssh_config_autocomplete_load"
 dir=${DIR_SSH}/{config,conf.d/*.conf}
-echo "* completion \"ssh_config\" ${dir}"
+if [ "$BASHCONFIGLOADERVERBOSITY" -gt "0" ]; then
+  echo "* completion \"ssh_config\" ${dir}"
+fi
 if ! command -v awk >/dev/null
 then
   echo "  /!\ awk is unavailable.  Aborting..(${script_dir})";

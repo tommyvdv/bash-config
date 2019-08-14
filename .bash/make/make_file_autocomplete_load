@@ -2,5 +2,7 @@
 # adds make directives to the make autocomplete
 # Call whenever Makefile changes
 # @TODO: experiment with file listener to update autocomplete automatically
-echo "* completion for \"Makefile\""
+if [ "$BASHCONFIGLOADERVERBOSITY" -gt "0" ]; then
+  echo "* completion for \"Makefile\""
+fi
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make

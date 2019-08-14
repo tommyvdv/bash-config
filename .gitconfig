@@ -10,5 +10,5 @@
 [push]
   default = simple
 [include]
-  path = .bash/git/.gitconfig-user
-  path = .bash/git/.gitconfig-alias
+  path = bash-config/.bash/git/.gitconfig-user
+  path = bash-config/.bash/git/.gitconfig-alias

@@ -37,23 +37,40 @@ RUN mkdir -p /root/tmp
 COPY repo.bundle /root/tmp/repo.bundle
 RUN echo "Clone repository from bundled repository" \
   && cd /root \
-  && git init \
-  && git remote add origin /root/tmp/repo.bundle \
-  && git pull origin master \
+  && git clone /root/tmp/repo.bundle bash-config
+  # && mkdir /bash-config \
+  # && cd /root/bash-config
+  # && git init \
+  # && git remote add origin /root/tmp/repo.bundle \
+  # && git pull origin master \
   # @todo: This shouldn't fail; but it does; Find out why.
-  && git submodule init
+  # && git submodule init
   # && git submodule update
-COPY .bash/lib /root/.bash/lib
+# COPY .bash/lib /root/.bash/lib
 
 RUN echo "Carrying out tasks you should do manually" \
-  && cd /root \
-  && cp .bash/git/.gitconfig-user.dist .bash/git/.gitconfig-user
+  && cd \
+  && cp bash-config/.bash/git/.gitconfig-user.dist bash-config/.bash/git/.gitconfig-user
 RUN echo "Install project fixtures" \
   && mkdir -p /root/projects/projectA /root/projects/projectB /root/projects/projectC
 RUN echo "Install host fixtures" \
   && echo "127.0.0.1	project_a.localhost" >> /etc/hosts \
   && echo "127.0.0.1	project_b.localhost" >> /etc/hosts \
   && echo "127.0.0.1	project_c.localhost" >> /etc/hosts
+RUN echo "Resulting $HOME directory structure:" \
+  && cd \
+  && tree -a -L 2
+RUN echo "Resulting submodules:" \
+  && cd \
+  && tree -a -L 1 bash-config/.bash/lib
+RUN echo "Pretend user already has some bash related files:" \
+  && cd \
+  && touch .bashrc .bash_profile .inputrc .someotherfile
+
+RUN echo "Use install script:" \
+  && cd \
+  && bash-config/bin/install.sh
+
 RUN echo "Install git fixture" \
   && mkdir -p /root/projects/gitproject \
   && cd /root/projects/gitproject \
@@ -61,10 +78,5 @@ RUN echo "Install git fixture" \
   && touch .gitignore readme.md \
   && git add --all \
   && git commit -m 'initial commit of a fixture repository'
-RUN echo "Resulting $HOME directory structure:" \
-  && cd /root \
-  && tree -a -L 2
-RUN echo "Resulting submodules:" \
-  && cd /root \
-  && tree -a -L 1 .bash/lib
+
 WORKDIR /root

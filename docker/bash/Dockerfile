@@ -29,10 +29,10 @@ RUN echo "Install ssh directory structure" \
   # Generate a wildly insecure key-pair without a passphrase;
   && ssh-keygen -b 4096 -t rsa -C "email@adres.com" -f /root/.ssh/id_rsa -q -N "" \
   && ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
-  # @todo: This shouldn't fail; but it does; Find out why.
-  # && ssh -T git@github.com
-  # @todo: some tricks
-  # eval "$(ssh-agent -s)" && ssh-add && ssh -T git@github.com && git submodule init && git submodule update
+  # @solved: Generating a key-pair works great as an example but fails at github
+  # because the key isn't (yet) associated to a github account. This is simply
+  # due to the fact our key isn't found in the authorized_hosts construct.
+  # The only way around this is using HTTPS based module URLs.
 RUN mkdir -p /root/tmp
 COPY repo.bundle /root/tmp/repo.bundle
 RUN echo "Clone repository from bundled repository" \

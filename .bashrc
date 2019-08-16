@@ -14,7 +14,7 @@ export BASHCONFIGLOADERVERBOSITY=1
 # ..set variables and..
 export DIR_BASH="$HOME/bash-config/.bash"
 export PATH_GIT_PROMPT="/etc/bash_completion.d/git-prompt"
-export DIR_ROOT_PROJECT_GOTO='/root/projects/' # trailing slash, please
+export DIR_ROOT_PROJECT_GOTO="$HOME/projects/" # trailing slash, please
 export DIR_SSH="$HOME/.ssh"
 # ..source files and..
 source "$DIR_BASH/prompt" 2>&1 >/dev/null

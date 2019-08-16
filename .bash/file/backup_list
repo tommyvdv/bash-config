@@ -1,0 +1,51 @@
+#!/bin/bash
+# back-up a set of files by copying and renaming
+# Output example:
+# .
+# ├── fileA
+# ├── fileA~backup20190816
+# ├── fileB
+# ├── fileB~backup20190816
+# ├── fileC
+# └── fileC~backup20190816
+appname=$(basename "$0")
+usage="$appname [-h] <file> ... -- Copy files and add suffix
+where:
+  -h | --help        Show usage help.
+  file               path/to/file
+  ...                more file arguments"
+argumentlist="$@"
+argumentcount="$#"
+
+parseOption (){
+  short=$1
+  long=$2
+  option=" $3 "
+  if [[ "${option}" == *" -${short} "* ]] || [[ "$option" == *" --$long "* ]]; then
+    echo true
+    exit 0
+  fi
+  echo false
+  exit 0
+}
+option_help=$(parseOption h help "$argumentlist")
+if [[ "" == "$argumentlist" ]] \
+  || [ "0" == "$argumentcount" ] \
+  || [ true = "${option_help}" ]
+then
+  echo "${usage}"
+  exit 0
+fi
+
+timestamp="$(date +%Y%m%d%H%M)"
+suffix="~backup$timestamp" # @todo: configurable by option
+filelist=($(tr ' ' '\n' <<< "${argumentlist[@]}" | sort -u | tr '\n' ' '))
+printf "%s\n" "${filelist[@]}" | while read file; do
+  from="$file"
+  to="$file$suffix"
+  echo -n "copying \"$from\" -> \"$to\" "
+  if [ ! -f $from ]; then echo "[FAIL] File not found" && continue; fi
+  if [ -f $to ]; then echo "[FAIL] Backup already exists, skipping.." && continue; fi
+  cp -n $from $to && \
+    echo "[OK]"
+done

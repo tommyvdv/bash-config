@@ -10,11 +10,14 @@ read -d '' filelist << EOF
 .screenrc
 EOF
 
+echo "Backing up existing files.."
+$DIR/.bash/file/backup_list $filelist
+
 echo "Creating links between \"$INSTALLDIR\" -> \"$DIR\".. "
 while IFS= read -r FILE
 do
   echo -n "add symlink $DIR/$FILE -> $INSTALLDIR/$FILE " \
-    && ln --symbolic --force --backup "$DIR/$FILE" "$INSTALLDIR/$FILE" \
+    && ln -sf "$DIR/$FILE" "$INSTALLDIR/$FILE" \
     && echo "[OK]"
 done <<< "$filelist"
 

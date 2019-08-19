@@ -10,5 +10,10 @@ fi
 # chars.  These are necessary to prevent issues with command line editing,
 # -browsing, -completion.
 if __git_ps1 2>/dev/null; then
+  GIT_PS1_SHOWDIRTYSTATE=1
+  GIT_PS1_SHOWSTASHSTATE=1
+  GIT_PS1_SHOWUNTRACKEDFILES=1
+  GIT_PS1_SHOWUPSTREAM="auto"
+  GIT_PS1_SHOWCOLORHINTS=1
   PROMPT_COMMAND='__git_ps1 "\[${REVERSE}\]\[${BLUE}\] \t \[${NORMAL}\]\[${BLUE}\] \W\[${NORMAL}\]" " "'
 fi

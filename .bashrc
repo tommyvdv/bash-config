@@ -31,7 +31,7 @@ alias ssh_config_autocomplete_load=". $DIR_BASH/ssh/ssh_config_autocomplete_load
 # ..load scripts and..
 alias backup_file_list="$DIR_BASH/file/backup_list"
 alias file_largest="$DIR_BASH/information/file_largest"
-alias project_goto="$DIR_BASH/navigation/project_goto"
+alias project_goto=". $DIR_BASH/navigation/project_goto"
 alias finder_cd="$DIR_BASH/osx/finder_cd"
 alias ssh_configure_host="$DIR_BASH/ssh/ssh_configure_host"
 alias ssh_configure_test="$DIR_BASH/ssh/ssh_configure_test"

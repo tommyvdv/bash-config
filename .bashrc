@@ -64,7 +64,11 @@ export PATH=$PATH:$GOPATH/bin
 # [brew] RabbitMq, see https://www.rabbitmq.com/
 export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
 
-# end with your temporary additions
+# ..great the user..
 if [ "$BASHCONFIGLOADERVERBOSITY" -gt "0" ]; then
   cat $DIR_BASH_VAR/data/*otd
 fi
+
+# ..end with your temporary additions
+alias cap2="ruby -S cap _2.15.5_"
+alias pcckill="pgrep -f PCClient | xargs kill -9"

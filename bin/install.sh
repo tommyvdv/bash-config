@@ -21,4 +21,8 @@ do
     && echo "[OK]"
 done <<< "$filelist"
 
+DIR_VAR="${DIR}/var/data"
+mkdir -p $DIR_VAR
+touch "${DIR_VAR}/motd" "${DIR_VAR}/motd"
+
 echo "..done"

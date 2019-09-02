@@ -44,5 +44,5 @@ source "$DIR_BASH/completions"
 export PATH="$PATH:$HOME/bin"
 # end with your temporary additions
 if [ "$BASHCONFIGLOADERVERBOSITY" -gt "0" ]; then
-  echo "Have a nice day!"
+  cat $DIR_BASH_VAR/data/*otd
 fi

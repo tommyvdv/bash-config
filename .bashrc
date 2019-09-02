@@ -12,11 +12,16 @@ export BASHCONFIGLOADERVERBOSITY=1
 # ├── 2: very verbose
 # └── 3: debug mode
 # ..set variables and..
-export DIR_BASH="$HOME/bash-config/.bash"
-export PATH_GIT_PROMPT="/etc/bash_completion.d/git-prompt"
+export DIR_BASH_CONFIG="$HOME/bash-config"
+export DIR_BASH="$DIR_BASH_CONFIG/.bash"
+export DIR_BASH_VAR="$DIR_BASH_CONFIG/var"
+export PATH_GIT_PROMPT="/usr/local/etc/bash_completion.d/git-prompt.sh"
 export DIR_ROOT_PROJECT_GOTO="$HOME/projects/" # trailing slash, please
 export DIR_SSH="$HOME/.ssh"
-# ..source files and..
+# ..source externals and..
+source /usr/local/etc/bash_completion.d/git-completion.bash
+__git_complete g _git
+# ..source internals and..
 source "$DIR_BASH/prompt" 2>&1 >/dev/null
 source "$DIR_BASH/alias/app"
 source "$DIR_BASH/alias/color"
@@ -33,7 +38,7 @@ alias backup_file_list="$DIR_BASH/file/backup_list"
 alias file_largest="$DIR_BASH/information/file_largest"
 alias project_goto=". $DIR_BASH/navigation/project_goto"
 alias finder_cd="$DIR_BASH/osx/finder_cd"
-alias ssh_configure_host="$DIR_BASH/ssh/ssh_configure_host"
+alias ssh_configure_host=". $DIR_BASH/ssh/ssh_configure_host"
 alias ssh_configure_test="$DIR_BASH/ssh/ssh_configure_test"
 alias git_get_object_link="$DIR_BASH/git/get_object_link"
 alias git_get_commit_score="$DIR_BASH/git/get_commit_score"

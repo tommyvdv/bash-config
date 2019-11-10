@@ -74,6 +74,6 @@ export PATH=/usr/bin:$PATH
 # ..great the user..
 echo -n "* port 80 scan results: " && nc -zv 127.0.0.1 80
 if [ "$BASHCONFIGLOADERVERBOSITY" -gt "0" ]; then
-  cat $DIR_BASH_VAR/data/*otd
+  cat_otd
 fi
 # ..end with your temporary additions

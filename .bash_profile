@@ -71,6 +71,7 @@ export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
 # [general] Make sure /usr/bin is used above all else.
 # This actually prevents using PHP curl instead of system in this instance.
 export PATH=/usr/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 # ..great the user..
 echo -n "* port 80 scan results: " && nc -zv 127.0.0.1 80 > /dev/null 2>&1 && echo "open" || echo "closed"
 if [ "$BASHCONFIGLOADERVERBOSITY" -gt "0" ]; then

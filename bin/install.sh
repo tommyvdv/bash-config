@@ -21,8 +21,15 @@ do
     && echo "[OK]"
 done <<< "$filelist"
 
+echo "Link your personal git config to the correct folder within bash-config.."
+FROM="${INSTALLDIR}/.gitconfig-user"
+TO="${DIR}/.bash/git/.gitconfig-user"
+touch "${FROM}"
+ln -s "${FROM}" "${TO}"
+
+echo "Prepare message and reminder of the day files.."
 DIR_VAR="${DIR}/var/data"
 mkdir -p $DIR_VAR
-touch "${DIR_VAR}/motd" "${DIR_VAR}/motd"
+touch "${DIR_VAR}/motd" "${DIR_VAR}/rotd"
 
 echo "..done"

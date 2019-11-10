@@ -1,0 +1,3 @@
+#!/bin/bash
+alias cat_motd="cat $DIR_BASH_VAR/data/motd"
+alias cat_rotd="cat $DIR_BASH_VAR/data/rotd"

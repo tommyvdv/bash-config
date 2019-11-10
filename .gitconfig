@@ -1,5 +1,6 @@
 [core]
   whitespace = tab-in-indent diff --check,tab-in-indent
+  excludesfile = ~/.gitignore-global
 [grep]
   extendRegexp = true
 [pretty]

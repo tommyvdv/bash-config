@@ -1,0 +1,7 @@
+#!/bin/bash
+# Assumes git-prompt.sh is available and loads it.
+# Will probably bugger out if this assumption turns out to be incorrect.
+export PATH_GIT_PROMPT="/usr/local/etc/bash_completion.d/git-prompt.sh"
+source /usr/local/etc/bash_completion.d/git-completion.bash
+__git_complete g _git
+echo "* completion \"git\" ${PATH_GIT_PROMPT}"

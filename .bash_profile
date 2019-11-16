@@ -16,14 +16,10 @@ export BASHCONFIGLOADERVERBOSITY=1
 export DIR_BASH_CONFIG="$HOME/bash-config"
 export DIR_BASH="$DIR_BASH_CONFIG/.bash"
 export DIR_BASH_VAR="$DIR_BASH_CONFIG/var"
-export PATH_GIT_PROMPT="/usr/local/etc/bash_completion.d/git-prompt.sh"
 export DIR_ROOT_PROJECT_GOTO="$HOME/projects/" # trailing slash, please
 export DIR_SSH="$HOME/.ssh"
 # ..source externals and..
-source /usr/local/etc/bash_completion.d/git-completion.bash
-__git_complete g _git
 # ..source internals and..
-source "$DIR_BASH/prompt" 2>&1 >/dev/null
 source "$DIR_BASH/alias/app"
 source "$DIR_BASH/alias/docker"
 source "$DIR_BASH/alias/color"
@@ -36,6 +32,7 @@ source "$DIR_BASH/less/lesspipe"
 alias project_autocomplete_load=". $DIR_BASH/navigation/project_goto_autocomplete_load";
 alias make_file_autocomplete_load=". $DIR_BASH/make/make_file_autocomplete_load"
 alias ssh_config_autocomplete_load=". $DIR_BASH/ssh/ssh_config_autocomplete_load"
+alias git_autocomplete_load=". $DIR_BASH/git/git_autocomplete_load"
 # ..load scripts and..
 alias backup_file_list="$DIR_BASH/file/backup_list"
 alias file_largest="$DIR_BASH/information/file_largest"
@@ -48,6 +45,8 @@ alias git_get_commit_score="$DIR_BASH/git/get_commit_score"
 alias git_rewrite_author="$DIR_BASH/git/rewrite_author"
 # ..source files that contain references to these aliases..
 source "$DIR_BASH/completions"
+# ..source internals for prompt and..
+source "$DIR_BASH/prompt" 2>&1 >/dev/null
 # ..expand this setup with external tools..
 # [php] LIIP PHP, see https://php-osx.liip.ch/
 PATH=/usr/local/php5/bin:$PATH # LIIP PHP goes before $PATH as we want it more than any other
